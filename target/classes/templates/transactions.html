@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>YandexTaxiHelper</title>
+</head>
+<body>
+<table border="1" align="center">
+    <thead>
+    <tr>
+        <th>ID водителя</th>
+        <th>Сумма</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="transaction : ${transactionsList}">
+        <td th:text="${transaction.getDriverProfileId()}"></td>
+        <td th:text="${transaction.getAmount()}"></td>
+    </tr>
+    </tbody>
+</table>
+<nav>
+    <a href="/profiles/">Список профилей</a>
+</nav>
+
+
+</body>
+</html>

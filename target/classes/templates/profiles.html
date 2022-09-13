@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>YandexTaxiHelper</title>
+</head>
+<body>
+<table border="1" align="center">
+    <thead>
+    <tr>
+        <th>ID водителя</th>
+        <th>Позывной</th>
+        <th>Фамилия</th>
+        <th>Имя</th>
+        <th>Отчество</th>
+        <th>Баланс</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="profile : ${profilesList}">
+        <td th:text="${profile.getId()}"></td>
+        <td th:text="${profile.getCallsign()}"></td>
+        <td th:text="${profile.getLastName()}"></td>
+        <td th:text="${profile.getFirstName()}"></td>
+        <td th:text="${profile.getMiddleName()}"></td>
+        <td th:text="${profile.getBalance()}"></td>
+    </tr>
+    </tbody>
+</table>
+<nav>
+    <a href="/transactions/">Список транзакций</a>
+</nav>
+
+
+</body>
+</html>
